@@ -318,7 +318,8 @@ impl WordApp {
                 file_dialogs::Asked::Busy => Ok(json!({"saved": false})),
             };
         }
-        let retry = (id == "file.open").then(|| params.clone());
+        // Opening a file, or a new document from a template, reads a file that may be protected.
+        let retry = matches!(id, "file.open" | "file.newFromTemplate").then(|| params.clone());
         let retry_path = retry.clone();
         let r = self.execute(id, params);
         if let (Err(e), Some(params)) = (&r, retry)
@@ -326,7 +327,8 @@ impl WordApp {
         {
             let path = params.get("path").and_then(Value::as_str).unwrap_or("");
             let name = std::path::Path::new(path).file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_else(|| path.to_string());
-            self.dialog = Some(dialogs::Dialog::Password { name, params, password: Default::default(), message: String::new() });
+            self.dialog =
+                Some(dialogs::Dialog::Password { name, then: id.to_string(), params, password: Default::default(), message: String::new() });
             return Ok(json!({"pending": "password"}));
         }
         // Whoever asked, a failed open names the file and the cause (#1103).
@@ -472,6 +474,7 @@ impl WordApp {
         if req.get("close").is_some() {
             self.quit_requested = true;
         }
+        crate::windows::arrange::request(self, req);
     }
 
     /// A request made for document `document`, which isn't shown and which no other window
@@ -1044,6 +1047,7 @@ pub(crate) fn works_without_document(id: &str) -> bool {
             | "tools.customizeKeyboard"
             | "tools.customizeRibbon"
             | "view.darkMode"
+            | "view.paperColor"
             | "view.marks"
             | "view.ruler"
             | "view.numeral"
