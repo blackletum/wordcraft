@@ -1081,7 +1081,7 @@ dependencies = [
 [[package]]
 name = "craft-pdf"
 version = "0.1.0"
-source = "git+https://github.com/storytold/craft-libs?rev=1b34eba41e62138fc2438d2734523b302840b45d#1b34eba41e62138fc2438d2734523b302840b45d"
+source = "git+https://github.com/storytold/craft-libs?rev=6e03f65bf45181db77ba6229716e6624db9eb25b#6e03f65bf45181db77ba6229716e6624db9eb25b"
 dependencies = [
  "krilla",
  "thiserror 2.0.21",
@@ -1135,7 +1135,7 @@ dependencies = [
 [[package]]
 name = "craft-update"
 version = "0.1.0"
-source = "git+https://github.com/storytold/craft-libs?rev=1b34eba41e62138fc2438d2734523b302840b45d#1b34eba41e62138fc2438d2734523b302840b45d"
+source = "git+https://github.com/storytold/craft-libs?rev=6e03f65bf45181db77ba6229716e6624db9eb25b#6e03f65bf45181db77ba6229716e6624db9eb25b"
 dependencies = [
  "chrono",
  "dunce",
@@ -1145,6 +1145,7 @@ dependencies = [
  "image",
  "log",
  "plist",
+ "rustix 1.1.5",
  "semver",
  "serde",
  "serde_json",
@@ -3010,7 +3011,7 @@ dependencies = [
 [[package]]
 name = "krilla"
 version = "0.8.2"
-source = "git+https://github.com/storytold/craft-libs?rev=1b34eba41e62138fc2438d2734523b302840b45d#1b34eba41e62138fc2438d2734523b302840b45d"
+source = "git+https://github.com/storytold/craft-libs?rev=6e03f65bf45181db77ba6229716e6624db9eb25b#6e03f65bf45181db77ba6229716e6624db9eb25b"
 dependencies = [
  "base64 0.22.1",
  "bumpalo",
@@ -6845,7 +6846,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "arboard",
  "chrono",
@@ -6877,13 +6878,15 @@ dependencies = [
  "wordcraft-engine",
  "wordcraft-fonts",
  "wordcraft-ui-egui",
+ "x11-dl",
  "x11rb",
+ "xkbcommon-dl",
  "zbus",
 ]
 
 [[package]]
 name = "wordcraft-cli"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "image",
  "serde_json",
@@ -6899,11 +6902,11 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-control-key"
-version = "0.15.1"
+version = "0.18.1"
 
 [[package]]
 name = "wordcraft-doc"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "base64 0.23.1",
  "log",
@@ -6917,7 +6920,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-docbin"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "cfb",
  "chrono",
@@ -6934,7 +6937,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-docx"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "aes",
  "base64 0.23.1",
@@ -6959,7 +6962,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-engine"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "cfb",
  "chrono",
@@ -6974,6 +6977,7 @@ dependencies = [
  "log",
  "regex",
  "regex-automata",
+ "rustix 1.1.5",
  "serde",
  "serde_json",
  "thiserror 2.0.21",
@@ -6992,7 +6996,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-fonts"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "brotli-decompressor",
  "harfrust 0.13.3",
@@ -7006,7 +7010,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-formats"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "aes",
  "base64 0.23.1",
@@ -7033,7 +7037,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-geom"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "image",
  "serde",
@@ -7041,7 +7045,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-layout"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "craft-proof",
  "image",
@@ -7061,7 +7065,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-mcp"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "log",
  "serde_json",
@@ -7073,7 +7077,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-metafile"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "kurbo",
  "thiserror 2.0.21",
@@ -7081,7 +7085,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-pdf"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "chrono",
  "craft-pdf",
@@ -7102,7 +7106,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-render"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "image",
  "log",
@@ -7116,7 +7120,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-ui-egui"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "accesskit_consumer",
  "cfb",
@@ -7149,7 +7153,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-web"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "craft-web-api",
  "craft-web-host",
@@ -7170,7 +7174,7 @@ dependencies = [
 
 [[package]]
 name = "wordcraft-zotero"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "log",
  "proptest",
@@ -7333,7 +7337,7 @@ checksum = "9440ea3e5aeabb0ac63af70daf835274065238cdd0cec83418f417eae38bacee"
 
 [[package]]
 name = "xtask"
-version = "0.15.1"
+version = "0.18.1"
 dependencies = [
  "serde_json",
 ]
